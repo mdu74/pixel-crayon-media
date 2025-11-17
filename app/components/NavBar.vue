@@ -2,6 +2,22 @@
 import { ref } from 'vue'
 
 const mobileMenuOpen = ref(false)
+
+const scrollToSection = (event, sectionId) => {
+  event.preventDefault()
+  const element = document.querySelector(sectionId)
+  if (element) {
+    const headerHeight = 80 // Approximate height of fixed navbar
+    const elementPosition = element.getBoundingClientRect().top
+    const offsetPosition = elementPosition + window.pageYOffset - headerHeight
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth',
+    })
+  }
+  mobileMenuOpen.value = false
+}
 </script>
 
 <template>
@@ -12,10 +28,10 @@ const mobileMenuOpen = ref(false)
           <img src="~/assets/images/logo/White-PIXEL-CRAYON-MEDIA-Logo.png" alt="Pixel Crayon Media" class="h-10" />
         </div>
         <nav class="hidden md:flex gap-8 items-center">
-          <a href="#packages" class="text-gray-200 hover:text-white transition text-sm font-medium">Packages</a>
-          <a href="#services" class="text-gray-200 hover:text-white transition text-sm font-medium">Services</a>
-          <a href="#about" class="text-gray-200 hover:text-white transition text-sm font-medium">About</a>
-          <a href="#contact" class="text-gray-200 hover:text-white transition text-sm font-medium">Contact</a>
+          <a href="#packages" @click="(e) => scrollToSection(e, '#packages')" class="text-gray-200 hover:text-white transition text-sm font-medium">Packages</a>
+          <a href="#services" @click="(e) => scrollToSection(e, '#services')" class="text-gray-200 hover:text-white transition text-sm font-medium">Services</a>
+          <a href="#about" @click="(e) => scrollToSection(e, '#about')" class="text-gray-200 hover:text-white transition text-sm font-medium">About</a>
+          <a href="#contact" @click="(e) => scrollToSection(e, '#contact')" class="text-gray-200 hover:text-white transition text-sm font-medium">Contact</a>
         </nav>
         <div class="flex gap-4 items-center">
           <a href="#" class="hidden sm:inline-block text-gray-200 hover:text-white transition">
@@ -66,28 +82,28 @@ const mobileMenuOpen = ref(false)
           <a
             href="#packages"
             class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-white hover:bg-slate-700 transition"
-            @click="mobileMenuOpen = false"
+            @click="(e) => scrollToSection(e, '#packages')"
           >
             Packages
           </a>
           <a
             href="#services"
             class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-white hover:bg-slate-700 transition"
-            @click="mobileMenuOpen = false"
+            @click="(e) => scrollToSection(e, '#services')"
           >
             Services
           </a>
           <a
             href="#about"
             class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-white hover:bg-slate-700 transition"
-            @click="mobileMenuOpen = false"
+            @click="(e) => scrollToSection(e, '#about')"
           >
             About
           </a>
           <a
             href="#contact"
             class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-white hover:bg-slate-700 transition"
-            @click="mobileMenuOpen = false"
+            @click="(e) => scrollToSection(e, '#contact')"
           >
             Contact
           </a>
