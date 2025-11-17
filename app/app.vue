@@ -5,6 +5,7 @@ import Packages from '~/components/Packages.vue'
 import Services from '~/components/Services.vue'
 import About from '~/components/About.vue'
 import ContactUs from '~/components/ContactUs.vue'
+import Footer from '~/components/Footer.vue'
 </script>
 
 <template>
@@ -37,6 +38,9 @@ import ContactUs from '~/components/ContactUs.vue'
     <!-- Contact Section -->
     <ContactUs />
   </div>
+
+<!-- Footer -->
+<Footer />
 </template>
 
 <!-- Styles moved into `Hero.vue` -->
