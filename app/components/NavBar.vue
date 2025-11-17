@@ -1,0 +1,96 @@
+<script setup>
+import { ref } from 'vue'
+
+const mobileMenuOpen = ref(false)
+</script>
+
+<template>
+  <header class="relative z-20 border-b border-white/10 backdrop-blur-md bg-slate-900/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+      <div class="flex-shrink-0">
+        <img src="~/assets/images/logo/White-PIXEL-CRAYON-MEDIA-Logo.png" alt="Pixel Crayon Media" class="h-10" />
+      </div>
+      <nav class="hidden md:flex gap-8 items-center">
+        <a href="#packages" class="text-gray-200 hover:text-white transition text-sm font-medium">Packages</a>
+        <a href="#services" class="text-gray-200 hover:text-white transition text-sm font-medium">Services</a>
+        <a href="#about" class="text-gray-200 hover:text-white transition text-sm font-medium">About</a>
+        <a href="#contact" class="text-gray-200 hover:text-white transition text-sm font-medium">Contact</a>
+      </nav>
+      <div class="flex gap-4 items-center">
+        <a href="#" class="hidden sm:inline-block text-gray-200 hover:text-white transition">
+          <img src="~/assets/images/icons/facebook.svg" alt="Facebook" class="h-5 w-5" />
+        </a>
+        <a href="#" class="hidden sm:inline-block text-gray-200 hover:text-white transition">
+          <img src="~/assets/images/icons/linkedin.svg" alt="LinkedIn" class="h-5 w-5" />
+        </a>
+        <a href="#" class="hidden sm:inline-block text-gray-200 hover:text-white transition">
+          <img src="~/assets/images/icons/instagram.svg" alt="Instagram" class="h-5 w-5" />
+        </a>
+        <a href="#" class="hidden sm:inline-block text-gray-200 hover:text-white transition">
+          <img src="~/assets/images/icons/whatsapp.svg" alt="WhatsApp" class="h-5 w-5" />
+        </a>
+        <!-- Mobile Menu Button -->
+        <button
+          @click="mobileMenuOpen = !mobileMenuOpen"
+          class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-200 hover:text-white transition"
+        >
+          <svg
+            v-if="!mobileMenuOpen"
+            class="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg
+            v-else
+            class="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div
+      v-if="mobileMenuOpen"
+      class="md:hidden bg-slate-800/95 backdrop-blur-md border-t border-white/10"
+    >
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <a
+          href="#packages"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-white hover:bg-slate-700 transition"
+          @click="mobileMenuOpen = false"
+        >
+          Packages
+        </a>
+        <a
+          href="#services"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-white hover:bg-slate-700 transition"
+          @click="mobileMenuOpen = false"
+        >
+          Services
+        </a>
+        <a
+          href="#about"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-white hover:bg-slate-700 transition"
+          @click="mobileMenuOpen = false"
+        >
+          About
+        </a>
+        <a
+          href="#contact"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-white hover:bg-slate-700 transition"
+          @click="mobileMenuOpen = false"
+        >
+          Contact
+        </a>
+      </div>
+    </div>
+  </header>
+</template>
