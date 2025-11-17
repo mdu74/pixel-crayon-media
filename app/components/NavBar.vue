@@ -34,16 +34,16 @@ const scrollToSection = (event, sectionId) => {
           <a href="#contact" @click="(e) => scrollToSection(e, '#contact')" class="text-gray-200 hover:text-white transition text-sm font-medium">Contact</a>
         </nav>
         <div class="flex gap-4 items-center">
-          <a href="#" class="hidden sm:inline-block text-gray-200 hover:text-white transition">
+          <a href="https://www.facebook.com/PixieCrayon/" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-block text-gray-200 hover:text-white transition">
             <img src="~/assets/images/icons/facebook.svg" alt="Facebook" class="h-5 w-5" />
           </a>
-          <a href="#" class="hidden sm:inline-block text-gray-200 hover:text-white transition">
+          <a href="https://www.linkedin.com/company/108773957/admin/dashboard/" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-block text-gray-200 hover:text-white transition">
             <img src="~/assets/images/icons/linkedin.svg" alt="LinkedIn" class="h-5 w-5" />
           </a>
-          <a href="#" class="hidden sm:inline-block text-gray-200 hover:text-white transition">
+          <a href="https://www.instagram.com/pixel_crayon_media/" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-block text-gray-200 hover:text-white transition">
             <img src="~/assets/images/icons/instagram.svg" alt="Instagram" class="h-5 w-5" />
           </a>
-          <a href="#" class="hidden sm:inline-block text-gray-200 hover:text-white transition">
+          <a href="https://wa.me/27737231312" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-block text-gray-200 hover:text-white transition">
             <img src="~/assets/images/icons/whatsapp.svg" alt="WhatsApp" class="h-5 w-5" />
           </a>
           <!-- Mobile Menu Button -->

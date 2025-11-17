@@ -5,11 +5,26 @@ import footerInstagram from '~/assets/images/icons/footer-instagram.svg'
 import footerWhatsApp from '~/assets/images/icons/footer-whatsapp.svg'
 
 const socialLinks = [
-  { name: 'Facebook', icon: footerFacebook, href: '#' },
-  { name: 'LinkedIn', icon: footerLinkedIn, href: '#' },
-  { name: 'Instagram', icon: footerInstagram, href: '#' },
-  { name: 'WhatsApp', icon: footerWhatsApp, href: '#' },
+  { name: 'Facebook', icon: footerFacebook, href: 'https://www.facebook.com/PixieCrayon/' },
+  { name: 'LinkedIn', icon: footerLinkedIn, href: 'https://www.linkedin.com/company/108773957/admin/dashboard/' },
+  { name: 'Instagram', icon: footerInstagram, href: 'https://www.instagram.com/pixel_crayon_media/' },
+  { name: 'WhatsApp', icon: footerWhatsApp, href: 'https://wa.me/27737231312' },
 ]
+
+const scrollToSection = (event, sectionId) => {
+  event.preventDefault()
+  const element = document.querySelector(sectionId)
+  if (element) {
+    const headerHeight = 80 // Approximate height of fixed navbar
+    const elementPosition = element.getBoundingClientRect().top
+    const offsetPosition = elementPosition + window.pageYOffset - headerHeight
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth',
+    })
+  }
+}
 </script>
 
 <template>
@@ -26,9 +41,9 @@ const socialLinks = [
         <div>
           <h3 class="text-2xl font-extrabold">Quick Links</h3>
           <div class="mt-6 space-y-2 text-lg">
-            <a href="#packages" class="block hover:underline">Packages</a>
-            <a href="#services" class="block hover:underline">Services</a>
-            <a href="#about" class="block hover:underline">About</a>
+            <a href="#packages" @click="(e) => scrollToSection(e, '#packages')" class="block hover:underline">Packages</a>
+            <a href="#services" @click="(e) => scrollToSection(e, '#services')" class="block hover:underline">Services</a>
+            <a href="#about" @click="(e) => scrollToSection(e, '#about')" class="block hover:underline">About</a>
           </div>
         </div>
 
@@ -39,6 +54,8 @@ const socialLinks = [
               v-for="social in socialLinks"
               :key="social.name"
               :href="social.href"
+              target="_blank"
+              rel="noopener noreferrer"
               class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/15 hover:bg-white/25 transition"
               :aria-label="social.name"
             >
