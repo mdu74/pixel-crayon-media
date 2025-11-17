@@ -109,7 +109,7 @@ const secondsDisplay = computed(() => two(seconds.value))
 
       <!-- Subtitle row placed beneath the 3-column grid -->
       <div class="w-full mt-8 mb-18">
-        <p class="text-sm sm:text-base lg:text-lg text-gray-300 mb-6 leading-relaxed max-w-3xl mx-auto text-center subtitle-text">
+        <p class="text-white text-center text-[20px] font-extralight leading-[121.924%] tracking-[0.25px] lowercase font-['Montserrat'] mb-6 max-w-3xl mx-auto" style="text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);">
           launch your online presence or upgrade your existing site with our<br />
           limited-time, budget-friendly packages.<br />
           simple, fast, and professional.
