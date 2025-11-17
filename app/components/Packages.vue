@@ -25,7 +25,7 @@
           </div>
           <ul class="space-y-3">
             <li class="flex items-start gap-3">
-              <img src="~/assets/images/icons/check.png" alt="check" class="w-5 h-5 mt-1" />
+              <img src="~/assets/images/icons/check.svg" alt="check" class="w-5 h-5 mt-1" />
               <span class="text-gray-700">Simple, professional online card</span>
             </li>
             <li class="flex items-start gap-3">

@@ -4,6 +4,7 @@ import Hero from '~/components/Hero.vue'
 import Packages from '~/components/Packages.vue'
 import Services from '~/components/Services.vue'
 import About from '~/components/About.vue'
+import ContactUs from '~/components/ContactUs.vue'
 </script>
 
 <template>
@@ -32,6 +33,9 @@ import About from '~/components/About.vue'
 
     <!-- About Section -->
     <About />
+
+    <!-- Contact Section -->
+    <ContactUs />
   </div>
 </template>
 
