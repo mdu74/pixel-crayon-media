@@ -8,7 +8,7 @@ const minutes = ref(0)
 const seconds = ref(0)
 
 // Target: 28th November 2025 (local time at 00:00)
-const targetDate = new Date(2025, 10, 28, 0, 0, 0)
+const targetDate = new Date(2025, 10, 30, 0, 0, 0)
 
 let timer = null
 
