@@ -86,37 +86,6 @@
               class="w-full h-auto rounded-lg shadow-lg object-cover"
             />
           </div>
-
-          <!-- Partner Logos -->
-          <div class="flex flex-wrap items-end justify-end gap-4 mt-auto">
-            <!-- 
-            <img 
-              src="~/assets/images/about-page/logos/ab4ir-logo.png" 
-              alt="AB4IR" 
-              class="h-12 object-contain opacity-80 hover:opacity-100 transition"
-            />
-            <img 
-              src="~/assets/images/about-page/logos/small-business-development-logo.png" 
-              alt="Small Business Development" 
-              class="h-12 object-contain opacity-80 hover:opacity-100 transition"
-            />
-            <img 
-              src="~/assets/images/about-page/logos/seda-logo.png" 
-              alt="SEDA" 
-              class="h-12 object-contain opacity-80 hover:opacity-100 transition"
-            />
-            <img 
-              src="~/assets/images/about-page/logos/tshwane-south-tvet-logo.png" 
-              alt="Tshwane South TVET College" 
-              class="h-12 object-contain opacity-80 hover:opacity-100 transition"
-            />
-            <img 
-              src="~/assets/images/logo/White-PIXEL-CRAYON-MEDIA-Logo.png" 
-              alt="Pixel Crayon Media" 
-              class="h-12 object-contain opacity-80 hover:opacity-100 transition"
-            />
-            -->
-          </div>
         </div>
       </div>
     </div>
