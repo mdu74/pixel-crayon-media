@@ -16,7 +16,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
         <!-- Left Card -->
-        <div class="bg-white p-8 relative border border-purple-900 rounded-[10px] shadow-card min-h-[510px] flex flex-col">
+        <div class="bg-white p-8 relative border border-purple-900 rounded-[10px] shadow-card min-h-[510px] flex flex-col transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:-translate-y-2 cursor-pointer">
           <h3 class="text-xl font-bold text-gray-900">The Quick Start</h3>
           <p class="text-sm text-gray-500 mt-2">Entry-level, Basic Design, Quick Turnaround</p>
           <hr class="bg-[#40005C] mt-6" />
@@ -48,11 +48,11 @@
         </div>
 
         <!-- Center Card (Most Popular) -->
-        <div class="relative z-0">
-          <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
+        <div class="relative z-0 group transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-2 cursor-pointer">
+          <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 transition-all duration-300 ease-in-out group-hover:-translate-y-1">
             <div class="bg-purple-800 text-white px-4 py-2 rounded-full text-sm font-semibold">Most Popular</div>
           </div>
-          <div class="bg-orange-500 rounded-lg shadow-2xl p-8 text-white flex flex-col items-start min-h-[600px]">
+          <div class="bg-orange-500 rounded-lg shadow-2xl p-8 text-white flex flex-col items-start min-h-[600px] transition-all duration-300 ease-in-out group-hover:shadow-2xl">
             <h3 class="text-2xl font-extrabold text-left">The Standard Boost</h3>
             <p class="text-sm mt-2 text-left">Custom Design, More Features</p>
             <div class="mt-6 mb-6">
@@ -89,7 +89,7 @@
         </div>
 
         <!-- Right Card -->
-        <div class="bg-white p-8 relative border border-purple-900 rounded-[10px] shadow-card min-h-[510px] flex flex-col">
+        <div class="bg-white p-8 relative border border-purple-900 rounded-[10px] shadow-card min-h-[510px] flex flex-col transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:-translate-y-2 cursor-pointer">
           <h3 class="text-xl font-bold text-gray-900">The Premium Pro</h3>
           <p class="text-sm text-gray-500 mt-2">Advanced Features, Full Strategy Consultation</p>
           <hr class="bg-[#40005C] mt-6" />
