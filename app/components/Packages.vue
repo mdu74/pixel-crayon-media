@@ -5,8 +5,8 @@
 <template>
   <section id="packages" class="relative py-20 bg-white">
     <!-- Left/Right decorative iMac images -->
-    <img src="../assets/images/packages-page/imac-left.png" alt="iMac left" class="hidden lg:block absolute -left-18 top-0 w-112 transform -translate-y-0 z-10 pointer-events-none" />
-    <img src="../assets/images/packages-page/imac-right.png" alt="iMac right" class="hidden lg:block absolute -right-12 bottom-0 w-112 transform translate-y-2 z-10 pointer-events-none" />
+    <img src="../assets/images/packages-page/imac-left.png" alt="iMac left" class="hidden lg:block absolute -left-18 bottom-150 w-112 transform -translate-y-0 z-10 pointer-events-none" />
+    <img src="../assets/images/packages-page/imac-right.png" alt="iMac right" class="hidden lg:block absolute -right-28 bottom-0 w-112 transform translate-y-1 z-10 pointer-events-none" />
 
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-12">

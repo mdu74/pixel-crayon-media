@@ -36,15 +36,15 @@
           </p>
           <ul class="space-y-2 mt-auto">
             <li class="flex items-start gap-2">
-              <span class="text-orange-500 font-bold mt-1">•</span>
+              <span class="text-orange-500 font-bold">•</span>
               <span class="text-orange-500">Fast turnaround</span>
             </li>
             <li class="flex items-start gap-2">
-              <span class="text-orange-500 font-bold mt-1">•</span>
+              <span class="text-orange-500 font-bold">•</span>
               <span class="text-orange-500">Professional look</span>
             </li>
             <li class="flex items-start gap-2">
-              <span class="text-orange-500 font-bold mt-1">•</span>
+              <span class="text-orange-500 font-bold">•</span>
               <span class="text-orange-500">Mobile friendly</span>
             </li>
           </ul>
@@ -59,15 +59,15 @@
           </p>
           <ul class="space-y-2 mt-auto">
             <li class="flex items-start gap-2">
-              <span class="text-orange-500 font-bold mt-1">•</span>
+              <span class="text-orange-500 font-bold">•</span>
               <span class="text-orange-500">Custom design</span>
             </li>
             <li class="flex items-start gap-2">
-              <span class="text-orange-500 font-bold mt-1">•</span>
+              <span class="text-orange-500 font-bold">•</span>
               <span class="text-orange-500">Multiple pages</span>
             </li>
             <li class="flex items-start gap-2">
-              <span class="text-orange-500 font-bold mt-1">•</span>
+              <span class="text-orange-500 font-bold">•</span>
               <span class="text-orange-500">Contact forms</span>
             </li>
           </ul>
@@ -82,15 +82,15 @@
           </p>
           <ul class="space-y-2 mt-auto">
             <li class="flex items-start gap-2">
-              <span class="text-orange-500 font-bold mt-1">•</span>
+              <span class="text-orange-500 font-bold">•</span>
               <span class="text-orange-500">Advanced features</span>
             </li>
             <li class="flex items-start gap-2">
-              <span class="text-orange-500 font-bold mt-1">•</span>
+              <span class="text-orange-500 font-bold">•</span>
               <span class="text-orange-500">Strategy consultation</span>
             </li>
             <li class="flex items-start gap-2">
-              <span class="text-orange-500 font-bold mt-1">•</span>
+              <span class="text-orange-500 font-bold">•</span>
               <span class="text-orange-500">Expert guidance</span>
             </li>
           </ul>
