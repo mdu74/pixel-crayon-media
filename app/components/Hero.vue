@@ -50,6 +50,19 @@ const daysDisplay = computed(() => two(days.value))
 const hoursDisplay = computed(() => two(hours.value))
 const minutesDisplay = computed(() => two(minutes.value))
 const secondsDisplay = computed(() => two(seconds.value))
+
+const scrollToSection = (sectionId) => {
+  const element = document.querySelector(sectionId)
+  if (!element) return
+
+  const headerHeight = 80
+  const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+
+  window.scrollTo({
+    top: elementPosition - headerHeight,
+    behavior: 'smooth',
+  })
+}
 </script>
 
 <template>
@@ -120,7 +133,10 @@ const secondsDisplay = computed(() => two(seconds.value))
           <button class="px-8 sm:px-10 py-3 sm:py-4 bg-gradient-to-r from-orange-400 to-orange-500 text-white font-bold rounded-full hover:from-orange-500 hover:to-orange-600 transition-all transform hover:scale-105 active:scale-95 shadow-lg shadow-orange-500/30 text-sm sm:text-base">
             Claim Deal Now
           </button>
-          <button class="px-8 sm:px-10 py-3 sm:py-4 border-2 border-orange-400 text-orange-400 font-bold rounded-full hover:bg-orange-400/10 hover:border-orange-300 transition-all transform hover:scale-105 active:scale-95 text-sm sm:text-base">
+          <button
+            class="px-8 sm:px-10 py-3 sm:py-4 border-2 border-orange-400 text-orange-400 font-bold rounded-full hover:bg-orange-400/10 hover:border-orange-300 transition-all transform hover:scale-105 active:scale-95 text-sm sm:text-base"
+            @click="scrollToSection('#packages')"
+          >
             Learn More
           </button>
         </div>
