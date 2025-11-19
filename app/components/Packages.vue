@@ -29,15 +29,15 @@
               <span class="text-gray-700">Simple, professional online card</span>
             </li>
             <li class="flex items-start gap-3">
-              <img src="~/assets/images/icons/check.png" alt="check" class="w-5 h-5 mt-1" />
+              <img src="~/assets/images/icons/check.svg" alt="check" class="w-5 h-5 mt-1" />
               <span class="text-gray-700">Basic design template</span>
             </li>
             <li class="flex items-start gap-3">
-              <img src="~/assets/images/icons/check.png" alt="check" class="w-5 h-5 mt-1" />
+              <img src="~/assets/images/icons/check.svg" alt="check" class="w-5 h-5 mt-1" />
               <span class="text-gray-700">Mobile responsive</span>
             </li>
             <li class="flex items-start gap-3">
-              <img src="~/assets/images/icons/check.png" alt="check" class="w-5 h-5 mt-1" />
+              <img src="~/assets/images/icons/check.svg" alt="check" class="w-5 h-5 mt-1" />
               <span class="text-gray-700">Quick 3-5 day turnaround</span>
             </li>
           </ul>
@@ -61,23 +61,23 @@
 
             <ul class="space-y-3 text-left w-full max-w-xs">
               <li class="flex items-start gap-3">
-                <img src="~/assets/images/icons/check.png" alt="check" class="w-5 h-5 mt-1" />
+                <img src="~/assets/images/icons/check.svg" alt="check" class="w-5 h-5 mt-1" />
                 <span>Unique custom design</span>
               </li>
               <li class="flex items-start gap-3">
-                <img src="~/assets/images/icons/check.png" alt="check" class="w-5 h-5 mt-1" />
+                <img src="~/assets/images/icons/check.svg" alt="check" class="w-5 h-5 mt-1" />
                 <span>Multiple pages</span>
               </li>
               <li class="flex items-start gap-3">
-                <img src="~/assets/images/icons/check.png" alt="check" class="w-5 h-5 mt-1" />
+                <img src="~/assets/images/icons/check.svg" alt="check" class="w-5 h-5 mt-1" />
                 <span>Contact forms</span>
               </li>
               <li class="flex items-start gap-3">
-                <img src="~/assets/images/icons/check.png" alt="check" class="w-5 h-5 mt-1" />
+                <img src="~/assets/images/icons/check.svg" alt="check" class="w-5 h-5 mt-1" />
                 <span>Social media integration</span>
               </li>
               <li class="flex items-start gap-3">
-                <img src="~/assets/images/icons/check.png" alt="check" class="w-5 h-5 mt-1" />
+                <img src="~/assets/images/icons/check.svg" alt="check" class="w-5 h-5 mt-1" />
                 <span>Perfect for small businesses</span>
               </li>
             </ul>
@@ -98,23 +98,23 @@
           </div>
           <ul class="space-y-3">
             <li class="flex items-start gap-3">
-              <img src="~/assets/images/icons/check.png" alt="check" class="w-5 h-5 mt-1" />
+              <img src="~/assets/images/icons/check.svg" alt="check" class="w-5 h-5 mt-1" />
               <span class="text-gray-700">Everything in Standard</span>
             </li>
             <li class="flex items-start gap-3">
-              <img src="~/assets/images/icons/check.png" alt="check" class="w-5 h-5 mt-1" />
+              <img src="~/assets/images/icons/check.svg" alt="check" class="w-5 h-5 mt-1" />
               <span class="text-gray-700">Advanced features (booking, e-commerce)</span>
             </li>
             <li class="flex items-start gap-3">
-              <img src="~/assets/images/icons/check.png" alt="check" class="w-5 h-5 mt-1" />
+              <img src="~/assets/images/icons/check.svg" alt="check" class="w-5 h-5 mt-1" />
               <span class="text-gray-700">Full strategy consultation</span>
             </li>
             <li class="flex items-start gap-3">
-              <img src="~/assets/images/icons/check.png" alt="check" class="w-5 h-5 mt-1" />
+              <img src="~/assets/images/icons/check.svg" alt="check" class="w-5 h-5 mt-1" />
               <span class="text-gray-700">Expert guidance for business goals</span>
             </li>
             <li class="flex items-start gap-3">
-              <img src="~/assets/images/icons/check.png" alt="check" class="w-5 h-5 mt-1" />
+              <img src="~/assets/images/icons/check.svg" alt="check" class="w-5 h-5 mt-1" />
               <span class="text-gray-700">High-performing website</span>
             </li>
           </ul>
