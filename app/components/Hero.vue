@@ -1,20 +1,35 @@
 <script setup>
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 
+// Content from database
+const heroContent = ref({
+  countdown_target_date: '2025-11-30T00:00:00',
+  primary_text: 'BLACK FRIDAY',
+  title_text: 'QUICK LAUNCH\nSPECIAL!',
+  subtitle_text: 'launch your online presence or upgrade your existing site with our\nlimited-time, budget-friendly packages.\nsimple, fast, and professional.',
+  cta_primary_text: 'Claim Deal Now',
+  cta_secondary_text: 'Learn More'
+})
+
 // Countdown state
 const days = ref(0)
 const hours = ref(0)
 const minutes = ref(0)
 const seconds = ref(0)
 
-// Target: 28th November 2025 (local time at 00:00)
-const targetDate = new Date(2025, 10, 30, 0, 0, 0)
+// Target date from content or default
+const targetDate = computed(() => {
+  if (heroContent.value.countdown_target_date) {
+    return new Date(heroContent.value.countdown_target_date)
+  }
+  return new Date(2025, 10, 30, 0, 0, 0)
+})
 
 let timer = null
 
 function updateCountdown() {
   const now = new Date()
-  const diff = targetDate.getTime() - now.getTime()
+  const diff = targetDate.value.getTime() - now.getTime()
 
   if (diff <= 0) {
     days.value = 0
@@ -35,7 +50,18 @@ function updateCountdown() {
   seconds.value = totalSeconds % 60
 }
 
-onMounted(() => {
+onMounted(async () => {
+  // Fetch hero content from API
+  try {
+    const data = await $fetch('/api/content/hero')
+    if (data) {
+      heroContent.value = { ...heroContent.value, ...data }
+    }
+  } catch (error) {
+    console.error('Error loading hero content:', error)
+    // Use defaults if fetch fails
+  }
+  
   updateCountdown()
   timer = setInterval(updateCountdown, 1000)
 })
@@ -110,9 +136,8 @@ const scrollToSection = (sectionId) => {
         <!-- Center column: Main heading/content (50%) -->
         <div class="col-span-1 md:col-span-3 text-center">
           <h1 class="mt-18">
-            <span class="hero-primary block">BLACK FRIDAY</span>
-            <span class="hero-title block">QUICK LAUNCH<br />
-            SPECIAL!</span>
+            <span class="hero-primary block">{{ heroContent.primary_text }}</span>
+            <span class="hero-title block" v-html="heroContent.title_text.replace(/\n/g, '<br />')"></span>
           </h1>
         </div>
 
@@ -122,22 +147,19 @@ const scrollToSection = (sectionId) => {
 
       <!-- Subtitle row placed beneath the 3-column grid -->
       <div class="w-full mt-8 mb-18">
-        <p class="text-white text-center text-[20px] font-extralight leading-[121.924%] tracking-[0.25px] lowercase font-['Montserrat'] mb-6 max-w-3xl mx-auto" style="text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);">
-          launch your online presence or upgrade your existing site with our<br />
-          limited-time, budget-friendly packages.<br />
-          simple, fast, and professional.
+        <p class="text-white text-center text-[20px] font-extralight leading-[121.924%] tracking-[0.25px] lowercase font-['Montserrat'] mb-6 max-w-3xl mx-auto" style="text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);" v-html="heroContent.subtitle_text.replace(/\n/g, '<br />')">
         </p>
 
         <!-- CTA Buttons (moved here) -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6">
           <button class="px-8 sm:px-10 py-3 sm:py-4 bg-gradient-to-r from-orange-400 to-orange-500 text-white font-bold rounded-full hover:from-orange-500 hover:to-orange-600 transition-all transform hover:scale-105 active:scale-95 shadow-lg shadow-orange-500/30 text-sm sm:text-base">
-            Claim Deal Now
+            {{ heroContent.cta_primary_text }}
           </button>
           <button
             class="px-8 sm:px-10 py-3 sm:py-4 border-2 border-orange-400 text-orange-400 font-bold rounded-full hover:bg-orange-400/10 hover:border-orange-300 transition-all transform hover:scale-105 active:scale-95 text-sm sm:text-base"
             @click="scrollToSection('#packages')"
           >
-            Learn More
+            {{ heroContent.cta_secondary_text }}
           </button>
         </div>
       </div>

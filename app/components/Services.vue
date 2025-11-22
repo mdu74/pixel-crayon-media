@@ -1,5 +1,42 @@
 <script setup>
-// No reactive logic needed for this static services section.
+const services = ref([
+  {
+    card_type: 'business_card',
+    title: 'Your Online Business Card',
+    package_name: 'Quick Start (R950):',
+    package_price: 'R950',
+    description: 'A clean, basic website built fast. Great for getting your name out there without the fuss. Perfect for freelancers, consultants, and small service providers.',
+    features: ['Fast turnaround', 'Professional look', 'Mobile friendly']
+  },
+  {
+    card_type: 'custom_showcase',
+    title: 'Your Custom Showcase',
+    package_name: 'Standard Boost (R1500):',
+    package_price: 'R1500',
+    description: 'A unique design that matches your brand. Includes more pages and features to impress your visitors. Ideal for small businesses needing a unique look and more functionality.',
+    features: ['Custom design', 'Multiple pages', 'Contact forms']
+  },
+  {
+    card_type: 'strategy_partner',
+    title: 'Your Full Strategy Partner',
+    package_name: 'Premium Pro (R2999):',
+    package_price: 'R2999',
+    description: 'Everything you need to dominate online. Advanced features, full strategy consultation, and expert guidance to turn your website into a business growth engine.',
+    features: ['Advanced features', 'Strategy consultation', 'Expert guidance']
+  }
+])
+
+onMounted(async () => {
+  try {
+    const data = await $fetch('/api/content/services')
+    if (data && data.length > 0) {
+      services.value = data
+    }
+  } catch (error) {
+    console.error('Error loading services content:', error)
+    // Use defaults if fetch fails
+  }
+})
 </script>
 
 <template>
@@ -27,71 +64,20 @@
 
       <!-- Three Package Cards -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Card 1: Your Online Business Card -->
-        <div class="bg-white rounded-[10px] p-8 shadow-lg flex flex-col">
-          <h3 class="text-xl font-bold text-purple-700 mb-4">Your Online Business Card</h3>
-          <div class="text-lg font-bold text-gray-900 mb-3">Quick Start (R950):</div>
+        <div
+          v-for="(service, index) in services"
+          :key="index"
+          class="bg-white rounded-[10px] p-8 shadow-lg flex flex-col"
+        >
+          <h3 class="text-xl font-bold text-purple-700 mb-4">{{ service.title }}</h3>
+          <div class="text-lg font-bold text-gray-900 mb-3">{{ service.package_name }}</div>
           <p class="text-gray-700 mb-6 leading-relaxed">
-            A clean, basic website built fast. Great for getting your name out there without the fuss. Perfect for freelancers, consultants, and small service providers.
+            {{ service.description }}
           </p>
           <ul class="space-y-2 mt-auto">
-            <li class="flex items-start gap-2">
+            <li v-for="(feature, featureIndex) in service.features" :key="featureIndex" class="flex items-start gap-2">
               <span class="text-orange-500 font-bold">•</span>
-              <span class="text-orange-500">Fast turnaround</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-orange-500 font-bold">•</span>
-              <span class="text-orange-500">Professional look</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-orange-500 font-bold">•</span>
-              <span class="text-orange-500">Mobile friendly</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Card 2: Your Custom Showcase -->
-        <div class="bg-white rounded-[10px] p-8 shadow-lg flex flex-col">
-          <h3 class="text-xl font-bold text-purple-700 mb-4">Your Custom Showcase</h3>
-          <div class="text-lg font-bold text-gray-900 mb-3">Standard Boost (R1500):</div>
-          <p class="text-gray-700 mb-6 leading-relaxed">
-            A unique design that matches your brand. Includes more pages and features to impress your visitors. Ideal for small businesses needing a unique look and more functionality.
-          </p>
-          <ul class="space-y-2 mt-auto">
-            <li class="flex items-start gap-2">
-              <span class="text-orange-500 font-bold">•</span>
-              <span class="text-orange-500">Custom design</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-orange-500 font-bold">•</span>
-              <span class="text-orange-500">Multiple pages</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-orange-500 font-bold">•</span>
-              <span class="text-orange-500">Contact forms</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Card 3: Your Full Strategy Partner -->
-        <div class="bg-white rounded-[10px] p-8 shadow-lg flex flex-col">
-          <h3 class="text-xl font-bold text-purple-700 mb-4">Your Full Strategy Partner</h3>
-          <div class="text-lg font-bold text-gray-900 mb-3">Premium Pro (R2999):</div>
-          <p class="text-gray-700 mb-6 leading-relaxed">
-            Everything you need to dominate online. Advanced features, full strategy consultation, and expert guidance to turn your website into a business growth engine.
-          </p>
-          <ul class="space-y-2 mt-auto">
-            <li class="flex items-start gap-2">
-              <span class="text-orange-500 font-bold">•</span>
-              <span class="text-orange-500">Advanced features</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-orange-500 font-bold">•</span>
-              <span class="text-orange-500">Strategy consultation</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-orange-500 font-bold">•</span>
-              <span class="text-orange-500">Expert guidance</span>
+              <span class="text-orange-500">{{ feature }}</span>
             </li>
           </ul>
         </div>

@@ -1,5 +1,42 @@
 <script setup>
-// No reactive logic needed for this static about section.
+const aboutContent = ref({
+  heading: 'Who Are We?',
+  intro_paragraph: 'Pixel Crayon Media is a dynamic, 100% black-owned visual communications company dedicated to transforming ideas into compelling visual experiences. We specialize in creating innovative design solutions that help businesses communicate effectively, build strong brand identities, and connect meaningfully with their audiences.',
+  services: [
+    {
+      category: 'Web Design',
+      icon_path: '~/assets/images/icons/web-design-icon.png',
+      items: ['Responsive website design', 'E-commerce solutions', 'UX and UI design', 'Website maintenance']
+    },
+    {
+      category: 'Graphic Design',
+      icon_path: '~/assets/images/icons/graphic-design-icon.png',
+      items: ['Marketing collateral design', 'Publication design', 'Packaging design', 'Social media graphics']
+    },
+    {
+      category: 'Animation',
+      icon_path: '~/assets/images/icons/animation-icon.png',
+      items: ['2D and 3D animation', 'Character animation', 'Product visualization', 'Animated presentations']
+    },
+    {
+      category: 'Skills Training',
+      icon_path: '~/assets/images/icons/skills-training-icon.png',
+      items: ['Design software training', 'Digital marketing workshops', 'Creative skills development', 'Professional development programs']
+    }
+  ]
+})
+
+onMounted(async () => {
+  try {
+    const data = await $fetch('/api/content/about')
+    if (data) {
+      aboutContent.value = { ...aboutContent.value, ...data }
+    }
+  } catch (error) {
+    console.error('Error loading about content:', error)
+    // Use defaults if fetch fails
+  }
+})
 </script>
 
 <template>
@@ -9,68 +46,26 @@
         <!-- Left Column: Content -->
         <div class="space-y-8">
           <!-- Heading -->
-          <h2 class="text-3xl md:text-4xl font-extrabold text-purple-700">Who Are We?</h2>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-purple-700">{{ aboutContent.heading }}</h2>
           
           <!-- Introductory Paragraph -->
           <p class="text-gray-700 leading-relaxed text-base md:text-lg">
-            Pixel Crayon Media is a dynamic, 100% black-owned visual communications company dedicated to transforming ideas into compelling visual experiences. We specialize in creating innovative design solutions that help businesses communicate effectively, build strong brand identities, and connect meaningfully with their audiences.
+            {{ aboutContent.intro_paragraph }}
           </p>
 
           <!-- Service Categories Grid (2x2) -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <!-- Web Design -->
-            <div class="space-y-3">
+            <div
+              v-for="(service, index) in aboutContent.services"
+              :key="index"
+              class="space-y-3"
+            >
               <div class="flex items-center gap-3">
-                <img src="~/assets/images/icons/web-design-icon.png" alt="Web Design" class="w-12 h-12" />
-                <h3 class="text-lg font-bold text-purple-700">Web Design</h3>
+                <img :src="service.icon_path.replace('~/', '/')" :alt="service.category" class="w-12 h-12" />
+                <h3 class="text-lg font-bold text-purple-700">{{ service.category }}</h3>
               </div>
               <ul class="space-y-2 pl-16">
-                <li class="text-gray-700">Responsive website design</li>
-                <li class="text-gray-700">E-commerce solutions</li>
-                <li class="text-gray-700">UX and UI design</li>
-                <li class="text-gray-700">Website maintenance</li>
-              </ul>
-            </div>
-
-            <!-- Graphic Design -->
-            <div class="space-y-3">
-              <div class="flex items-center gap-3">
-                <img src="../assets/images/icons/graphic-design-icon.png" alt="Graphic Design" class="w-12 h-12" />
-                <h3 class="text-lg font-bold text-purple-700">Graphic Design</h3>
-              </div>
-              <ul class="space-y-2 pl-16">
-                <li class="text-gray-700">Marketing collateral design</li>
-                <li class="text-gray-700">Publication design</li>
-                <li class="text-gray-700">Packaging design</li>
-                <li class="text-gray-700">Social media graphics</li>
-              </ul>
-            </div>
-
-            <!-- Animation -->
-            <div class="space-y-3">
-              <div class="flex items-center gap-3">
-                <img src="../assets/images/icons/animation-icon.png" alt="Animation" class="w-12 h-12" />
-                <h3 class="text-lg font-bold text-purple-700">Animation</h3>
-              </div>
-              <ul class="space-y-2 pl-16">
-                <li class="text-gray-700">2D and 3D animation</li>
-                <li class="text-gray-700">Character animation</li>
-                <li class="text-gray-700">Product visualization</li>
-                <li class="text-gray-700">Animated presentations</li>
-              </ul>
-            </div>
-
-            <!-- Skills Training -->
-            <div class="space-y-3">
-              <div class="flex items-center gap-3">
-                <img src="../assets/images/icons/skills-training-icon.png" alt="Skills Training" class="w-12 h-12" />
-                <h3 class="text-lg font-bold text-purple-700">Skills Training</h3>
-              </div>
-              <ul class="space-y-2 pl-16">
-                <li class="text-gray-700">Design software training</li>
-                <li class="text-gray-700">Digital marketing workshops</li>
-                <li class="text-gray-700">Creative skills development</li>
-                <li class="text-gray-700">Professional development programs</li>
+                <li v-for="(item, itemIndex) in service.items" :key="itemIndex" class="text-gray-700">{{ item }}</li>
               </ul>
             </div>
           </div>
