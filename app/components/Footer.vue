@@ -8,7 +8,7 @@ const socialLinks = [
   { name: 'Facebook', icon: footerFacebook, href: 'https://www.facebook.com/PixieCrayon/' },
   { name: 'LinkedIn', icon: footerLinkedIn, href: 'https://www.linkedin.com/company/108773957/admin/dashboard/' },
   { name: 'Instagram', icon: footerInstagram, href: 'https://www.instagram.com/pixel_crayon_media/' },
-  { name: 'WhatsApp', icon: footerWhatsApp, href: 'https://wa.me/27737231312' },
+  { name: 'WhatsApp', icon: footerWhatsApp, href: 'https://wa.me/0737231312' },
 ]
 
 const scrollToSection = (event, sectionId) => {

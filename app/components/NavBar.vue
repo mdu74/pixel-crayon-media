@@ -43,7 +43,7 @@ const scrollToSection = (event, sectionId) => {
           <a href="https://www.instagram.com/pixel_crayon_media/" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-block text-gray-200 hover:text-white transition">
             <img src="~/assets/images/icons/instagram.svg" alt="Instagram" class="h-5 w-5" />
           </a>
-          <a href="https://wa.me/27737231312" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-block text-gray-200 hover:text-white transition">
+          <a href="https://wa.me/0737231312" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-block text-gray-200 hover:text-white transition">
             <img src="~/assets/images/icons/whatsapp.svg" alt="WhatsApp" class="h-5 w-5" />
           </a>
           <!-- Mobile Menu Button -->
